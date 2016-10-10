@@ -37,6 +37,7 @@ Improvements/To do's
 * Although scrolling performance seems decent, no performance analysis has been done. There are optimization possible by flattening some of the layouts. - *Optimization*
 * Although Unit test package is present, no unit test implementation is done. *Code Improvement*
 * Image Load Async Task could be reused across the two activities. Its not done here. There are separate AsyncTask for this purpose in each activity. - *Code Improvement*
+* Parceling bitmaps are expensive. In this app, bitmaps are created in Main activity by  scaling down and then parceled to control OOM Exceptions. It might still crash on very low memory devices. Have not tested it. One way to solve this is by caching images to disk for a session and reading it back again to maintain the image resolutions. This is one scenario where image libraries like Picaso is more convenient and helpful.
 
 Test Setup
 ==

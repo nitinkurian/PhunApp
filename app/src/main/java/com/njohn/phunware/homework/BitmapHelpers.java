@@ -12,10 +12,11 @@ import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
  */
 
 public class BitmapHelpers {
-    public static RoundedBitmapDrawable createRoundedBitmapDrawable(Resources resources, Bitmap bitmap){
+    public static RoundedBitmapDrawable createRoundedBitmapDrawable(Resources resources, Bitmap original){
+        Bitmap bitmap = Bitmap.createScaledBitmap(original, 300, 300 * (original.getWidth()/original.getHeight()), true);
+
         int bitmapWidth = bitmap.getWidth();
         int bitmapHeight = bitmap.getHeight();
-
         // Calculate the bitmap radius
         int bitmapRadius = Math.min(bitmapWidth,bitmapHeight)/2;
         int bitmapSquareWidth = Math.min(bitmapWidth,bitmapHeight);
